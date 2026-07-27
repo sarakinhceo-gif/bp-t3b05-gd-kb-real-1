@@ -1,239 +1,61 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="bpaas-design-system" content="brutalist-avantgarde">
-  <meta name="bpaas-design-theme" content="kr-raw-concrete">
-  <title>공덕 노래방 내돈내산 블로그 - 브로들의 찐후기</title>
-  <meta name="description" content="공덕 노래방 진짜 내돈내산 후기입니다. 브로들이 인정한 가성비 최고 노래방. 시설 음향 모두 만족. 전화 010-6279-0862">
-  <meta name="keywords" content="공덕 노래방, 공덕 내돈내산, 공덕 가성비 노래방, 공덕 노래방 추천, 공덕 노래방 후기, 브로 후기">
-  <link rel="canonical" href="https://t3b05-gd-kb-real-1.vercel.app/">
-  <meta property="og:title" content="공덕 노래방 내돈내산 - 브로들이 보증하는 찐 후기">
-  <meta property="og:description" content="공덕에서 진짜 내돈내산 노래방. 시설 음향 가격 모두 인정. 지금 전화예약!">
-  <meta property="og:url" content="https://t3b05-gd-kb-real-1.vercel.app/">
-  <meta property="og:type" content="article">
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="공덕 노래방 내돈내산 블로그">
-  <meta name="twitter:description" content="브로들이 직접 다녀온 공덕 노래방 찐후기">
-
-  <style>
-    /* CSS DNA: Street Brutalist */
-    *, *::before, *::after {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-    :root {
-      --bg: #f5f0eb;
-      --fg: #1a1a1a;
-      --accent: #d91e1e;
-      --accent2: #f2a900;
-      --border: 4px solid var(--fg);
-      --shadow: 6px 6px 0 var(--fg);
-      --font: 'Helvetica Neue', 'Arial Black', sans-serif;
-      --font-body: 'Helvetica', 'Arial', sans-serif;
-      --max-width: 1200px;
-    }
-    html {
-      scroll-behavior: smooth;
-    }
-    body {
-      background: var(--bg);
-      color: var(--fg);
-      font-family: var(--font-body);
-      line-height: 1.5;
-      min-height: 100vh;
-      padding: 0 20px;
-    }
-    h1, h2, h3, h4, h5, h6 {
-      font-family: var(--font);
-      text-transform: uppercase;
-      letter-spacing: -1px;
-      line-height: 1;
-      margin-bottom: 0.5em;
-    }
-    h1 { font-size: 2.8rem; border-bottom: var(--border); padding-bottom: 0.2em; }
-    h2 { font-size: 2.2rem; }
-    h3 { font-size: 1.6rem; }
-    p { margin-bottom: 1em; font-size: 1.1rem; }
-    a {
-      color: var(--accent);
-      text-decoration: underline;
-      text-underline-offset: 4px;
-      font-weight: bold;
-    }
-    a:hover {
-      background: var(--accent2);
-      color: var(--fg);
-      text-decoration: none;
-    }
-    img, svg, .emoji-placeholder {
-      display: block;
-      max-width: 100%;
-      height: auto;
-      border: var(--border);
-      box-shadow: var(--shadow);
-      margin: 1.5em 0;
-    }
-    .emoji-placeholder {
-      width: 100%;
-      height: 200px;
-      background: #ddd;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 4rem;
-    }
-    header, nav, section, article, aside, footer {
-      border: var(--border);
-      padding: 1.5rem;
-      margin-bottom: 2rem;
-      background: white;
-      box-shadow: var(--shadow);
-    }
-    .container {
-      max-width: var(--max-width);
-      margin: 0 auto;
-    }
-    /* 네비게이션 */
-    nav {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      flex-wrap: wrap;
-      position: relative;
-    }
-    nav .logo a {
-      font-family: var(--font);
-      font-size: 1.8rem;
-      text-decoration: none;
-      color: var(--fg);
-    }
-    nav .nav-links {
-      display: flex;
-      gap: 1.5rem;
-      list-style: none;
-    }
-    nav .nav-links a {
-      font-family: var(--font);
-      text-transform: uppercase;
-      font-size: 1.1rem;
-      color: var(--fg);
-      text-decoration: none;
-      padding: 0.3em 0.6em;
-      border: 2px solid transparent;
-    }
-    nav .nav-links a:hover {
-      border-color: var(--accent);
-    }
-    /* 햄버거 */
-    .hamburger {
-      display: none;
-      flex-direction: column;
-      cursor: pointer;
-      gap: 5px;
-    }
-    .hamburger span {
-      display: block;
-      width: 30px;
-      height: 4px;
-      background: var(--fg);
-      border-radius: 0;
-    }
-    #nav-toggle { display: none; }
-    /* 전화 링크 */
-    .tel-link {
-      background: var(--accent);
-      color: white !important;
-      padding: 0.5em 1.2em;
-      font-weight: bold;
-      border: 3px solid var(--fg);
-      text-decoration: none;
-      display: inline-block;
-      transition: 0.2s;
-    }
-    .tel-link:hover {
-      background: var(--accent2);
-      color: var(--fg) !important;
-    }
-    /* 카드 */
-    .card {
-      background: white;
-      border: var(--border);
-      padding: 1.5rem;
-      margin-bottom: 1.5rem;
-      box-shadow: var(--shadow);
-    }
-    .card h3 { margin-top: 0; }
-    /* 반응형 */
-    @media (max-width: 768px) {
-      body { padding: 0 10px; }
-      h1 { font-size: 2.2rem; }
-      h2 { font-size: 1.8rem; }
-      nav .nav-links {
-        display: none;
-        flex-direction: column;
-        width: 100%;
-        background: white;
-        border: var(--border);
-        padding: 1rem;
-        margin-top: 1rem;
-      }
-      .hamburger { display: flex; }
-      #nav-toggle:checked + .hamburger + .nav-links {
-        display: flex;
-      }
-      .tel-link { font-size: 1rem; padding: 0.4em 0.8em; }
-    }
-    /* 푸터 */
-    footer {
-      text-align: center;
-      font-size: 0.9rem;
-      border-top: var(--border);
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="bpaas-design-system" content="brutalist-avantgarde">
+    <meta name="bpaas-design-theme" content="kr-night-signal">
+    <title>공덕 노래방 내돈내산 — 참석자 중심의 최적 공간 선택 가이드</title>
+    <meta name="description" content="공덕 노래방 이용 시 참석자의 규모와 목적에 따른 공간 선택 기준을 제시합니다. 시설 확인 요소와 효율적인 예약 판단 기준을 확인하세요.">
+    <meta name="keywords" content="공덕 노래방, 공덕 회식, 노래방 선택 기준, 노래방 시설 확인, 공덕 모임">
+    <link rel="canonical" href="https://gongdeok-song-tip.link-hub.org/blog.html">
+    <meta property="og:title" content="공덕 노래방 내돈내산 — 참석자 중심의 최적 공간 선택 가이드">
+    <meta property="og:description" content="실무적인 관점에서 공덕 지역 노래방을 선택할 때 확인해야 할 체크리스트와 공간별 특성을 분석합니다.">
+  <meta property="og:url" content="https://gongdeok-song-tip.link-hub.org/blog.html">
 </head>
 <body>
-<div class="container">
-  <!-- 네비게이션 -->
-  <nav>
-    <div class="logo">
-      <a href="/">🎤 공덕노래방</a>
-    </div>
-    <input type="checkbox" id="nav-toggle">
-    <label for="nav-toggle" class="hamburger">
-      <span></span>
-      <span></span>
-      <span></span>
-    </label>
-    <ul class="nav-links">
-      <li><a href="/">홈</a></li>
-      <li><a href="/review">후기</a></li>
-      <li><a href="/blog">블로그</a></li>
-      <li><a href="/price">가격</a></li>
-      <li><a href="/contact">문의</a></li>
-    </ul>
-    <a href="tel:01062790862" class="tel-link">📞 010-6279-0862</a>
-  </nav>
 
-  <!-- 메인 블로그 콘텐츠 -->
-  <main>
-    <article class="card">
-      <h1>🔥 공덕 노래방 내돈내산 찐 후기</h1>
-      <p style="font-size:0.9rem; color:#555; margin-bottom:1.5em;">2025.04.07 | 작성: 브로</p>
+<header>
+    <nav class="k-nav-vp12">
+        <a href="/">홈</a>
+        <a href="/guide">이용 가이드</a>
+        <a href="/blog">블로그</a>
+    </nav>
+</header>
 
-      <p>형들 안녕! 오늘은 진짜 <strong>내돈내산</strong>으로 다녀온 <strong>공덕 노래방</strong> 후기 쓴다. 평소에 술 한잔 하면서 노래 부르는 걸 좋아하는데, 공덕 쪽에 괜찮은 데 있다고 해서 브로랑 둘이 가봤어.</p>
+<main class="r-main-78cm">
+    <h1>공덕 노래방 선택을 위한 전략적 공간 분석</h1>
+    
+    <section>
+        <h2>공간의 물리적 환경과 음향 시스템의 상관관계</h2>
+        <p>공덕 지역은 업무 지구와 주거지가 혼재된 특성상 노래방의 형태 또한 다양하게 분포되어 있습니다. 단순히 인원을 수용하는 공간을 넘어, 참석자의 성향과 모임의 목적에 따라 적합한 음향 설비와 룸 컨디션을 선택하는 것이 중요합니다. 특히 마이크의 수음 성능과 스피커의 밸런스는 회식의 만족도를 결정짓는 핵심 지표가 됩니다.</p>
+        <p>현장 확인 시 가장 먼저 고려해야 할 요소는 방음 설비의 밀도입니다. 공덕 인근의 소규모 상가 건물에 위치한 경우, 인접 룸의 소음이 유입되지 않는지 확인해야 합니다. 이는 단순히 소음 문제를 넘어 대화의 질을 유지하고 전체적인 모임의 몰입도를 높이는 데 결정적인 역할을 수행합니다.</p>
+    </section>
 
-      <div class="emoji-placeholder">🎤🎶</div>
+    <section>
+        <h2>참석자 규모에 따른 룸 타입 선정 전략</h2>
+        <p>4인 이하의 소규모 모임과 10인 이상의 단체 회식은 선택해야 하는 공간의 구조가 완전히 달라야 합니다. 소규모 인원은 공간의 밀도가 높은 룸을 선택하여 응집력을 높이는 것이 유리하며, 대규모 인원은 동선을 고려하여 테이블 배치와 무대 공간이 확보된 룸을 우선순위에 두어야 합니다.</p>
+        <p>예약 전 반드시 확인해야 할 부분은 비상구 접근성과 화장실의 위치입니다. 다수가 모이는 장소일수록 편의 시설의 접근성은 모임의 원활한 진행을 돕는 필수 조건입니다. 공덕 내 특정 업소를 방문할 때, 해당 건물의 층별 구조도를 미리 인지하고 있다면 현장에서의 혼선을 방지할 수 있습니다.</p>
+    </section>
 
-      <h2>1. 위치 & 분위기</h2>
-      <p>공덕역 3번 출구에서 걸어서 3분? 진짜 가깝다. 건물 2층에 있고 입구부터 간판이 빨간색으로 눈에 확 띄더라. 들어가니까 인테리어가 깔끔하면서도 약간 복고 느낌? LED 조명도 있고 무대도 있어서 그냥 일반 노래방이 아니라 공연장 느낌이랄까.</p>
+    <section>
+        <h2>예약 프로세스의 효율화 및 비용 대비 가치 평가</h2>
+        <p>노래방 예약 시 시간대별 요금 체계를 사전에 파악하는 것은 비용 효율적 운영의 기본입니다. 공덕 지역은 금요일 저녁이나 주말 시간대에 수요가 집중되는 경향이 있으므로, 최소 3일 전 예약 확정을 통해 안정적인 공간 확보를 권장합니다. 이때 단순히 가격만을 비교하기보다는 기본 제공 서비스와 시간 연장 혜택을 통합적으로 고려해야 합니다.</p>
+        <p>또한, 조명 시스템의 조절 가능 여부와 리모컨의 반응 속도 등 사소한 인터페이스가 사용자 경험에 미치는 영향은 큽니다. 디지털 기기 사용에 익숙한 세대라면 최신형 반주기가 설치되어 있는지, 신곡 업데이트가 실시간으로 이루어지는지 여부를 체크리스트에 포함하는 것이 합리적인 선택의 기준이 될 것입니다.</p>
+    </section>
 
-      <h2>2. 가격 — 이게 진짜 레전드</h2>
-      <p>보통 공덕 노래방 가격이 1시간에 2~3만 원 하는데, 여기는 <strong>2시간에 25,000원</strong>이야. 거기에 음료랑 안주 서비스도 기본으로 줌. 주말에는 약간 더 받는데 그래도 다른 데보다 훨씬 싸. 진짜 <strong>가성비 노래방</strong> 인정할 수밖에 없더라.</p>
+    <section>
+        <h2>자주 묻는 질문(FAQ)</h2>
+        <h3>Q: 공덕 지역에서 노래방 예약 시 가장 중요한 기준은 무엇인가요?</h3>
+        <p>A: 참석 인원에 최적화된 룸 크기와 방음 시설의 상태가 가장 우선입니다. 쾌적한 음향 환경은 모임의 성패를 좌우합니다.</p>
+        <h3>Q: 평일 회식 시 대규모 인원 수용 가능한 곳은 어떻게 찾나요?</h3>
+        <p>A: 사전에 전화 문의를 통해 대형 룸 보유 여부와 비상 대피로 정보를 확인하는 것이 실무적으로 가장 안전한 방법입니다.</p>
+    </section>
+</main>
 
-      <h2>3. 음향 & 시설</h2>
-      <p>가장 놀란 게 음향이야. 마이크가 JBL 이었나? 소리가 엄청 선명하고 울림도 적절해. 스피커도 크고 저음이 찰져서 랩이나 고음도 잘 뽑힌다. 브로가 '결혼해줘' 불렀
+<footer class="t-img-iyng">
+    <p>&copy; 2024 공덕 지역 정보 공유 네트워크. 모든 기준은 실무 경험을 바탕으로 작성되었습니다.</p>
+</footer>
+
 </body>
 </html>
