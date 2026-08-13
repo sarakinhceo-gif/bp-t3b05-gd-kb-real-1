@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>글 목록 (1/2) · t3b05-gd-kb-real-1</title>
+  <meta name="description" content="t3b05-gd-kb-real-1에 올라온 글 목록입니다.">
+  <link rel="canonical" href="https://gongdeok-song-tip.link-hub.org/posts.html">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <style>
+ 
+ :root {
+ --bg-dark: #0f172a;
+ --bg-card: rgba(255, 255, 255, 0.03);
+ --border-color: rgba(255, 255, 255, 0.08);
+ --primary-neon: #1e3a8a;
+ --accent-neon: #38bdf8;
+ --text-main: #f4f4f5;
+ --text-muted: #a1a1aa;
+ }
+ 
+ * {
+ margin: 0;
+ padding: 0;
+ box-sizing: border-box;
+ }
+ 
+ body {
+ background-color: var(--bg-dark);
+ color: var(--text-main);
+ font-family: sans-serif, -apple-system, sans-serif;
+ line-height: 1.7;
+ overflow-x: hidden;
+ }
+ 
+ .glow-header {
+ background: rgba(0, 0, 0, 0.5);
+ backdrop-filter: blur(12px);
+ border-bottom: 1px solid var(--border-color);
+ position: sticky;
+ top: 0;
+ z-index: 100;
+ }
+ 
+ .nav-container {
+ max-width: 1100px;
+ margin: 0 auto;
+ display: flex;
+ justify-content: space-between;
+ align-items: center;
+ padding: 16px 20px;
+ }
+ 
+ .logo-glow {
+ font-size: 1.4rem;
+ font-weight: 800;
+ color: #fff;
+ text-decoration: none;
+ background: linear-gradient(135deg, #fff, var(--accent-neon));
+ -webkit-background-clip: text;
+ -webkit-text-fill-color: transparent;
+ text-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+ }
+ 
+ .nav-links a {
+ color: var(--text-muted);
+ text-decoration: none;
+ margin-left: 24px;
+ font-size: 0.95rem;
+ font-weight: 600;
+ transition: color 0.3s;
+ }
+ 
+ .nav-links a:hover {
+ color: var(--accent-neon);
+ }
+ 
+ .hero-glow {
+ padding: 120px 20px 80px;
+ text-align: center;
+ background: radial-gradient(circle at top, var(--primary-neon) 0%, transparent 70%);
+ position: relative;
+ }
+ 
+ .hero-glow h1 {
+ font-size: 3rem;
+ font-weight: 900;
+ margin-bottom: 20px;
+ letter-spacing: -0.05em;
+ line-height: 1.2;
+ }
+ 
+ .gradient-txt {
+ background: linear-gradient(135deg, #fff, var(--accent-neon));
+ -webkit-background-clip: text;
+ -webkit-text-fill-color: transparent;
+ }
+ 
+ .hero-glow p {
+ font-size: 1.2rem;
+ color: var(--text-muted);
+ max-width: 700px;
+ margin: 0 auto 30px;
+ }
+ 
+ .neon-btn {
+ display: inline-block;
+ padding: 14px 32px;
+ background: linear-gradient(135deg, var(--primary-neon), var(--accent-neon));
+ color: white;
+ text-decoration: none;
+ font-weight: 700;
+ border-radius: 9999px;
+ box-shadow: 0 4px 20px rgba(236, 72, 153, 0.3);
+ transition: all 0.3s ease;
+ }
+ 
+ .neon-btn:hover {
+ transform: scale(1.03);
+ box-shadow: 0 6px 25px rgba(236, 72, 153, 0.6);
+ }
+ 
+ .sec-wrap {
+ max-width: 900px;
+ margin: 0 auto;
+ padding: 80px 20px;
+ }
+ 
+ .glass-box {
+ background: var(--bg-card);
+ border: 1px solid var(--border-color);
+ border-radius: 20px;
+ padding: 40px;
+ backdrop-filter: blur(8px);
+ margin-bottom: 40px;
+ }
+ 
+ .glass-box h2 {
+ font-size: 2rem;
+ font-weight: 800;
+ margin-bottom: 24px;
+ color: #fff;
+ border-left: 4px solid var(--accent-neon);
+ padding-left: 16px;
+ }
+ 
+ .glass-box p {
+ font-size: 1.05rem;
+ color: var(--text-muted);
+ margin-bottom: 20px;
+ }
+ 
+ .grid-container {
+ display: grid;
+ grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+ gap: 24px;
+ margin-top: 32px;
+ }
+ 
+ .mini-card {
+ background: rgba(255, 255, 255, 0.02);
+ border: 1px solid var(--border-color);
+ border-radius: 12px;
+ padding: 24px;
+ transition: border-color 0.3s, transform 0.3s;
+ }
+ 
+ .mini-card:hover {
+ border-color: var(--accent-neon);
+ transform: translateY(-2px);
+ }
+ 
+ .mini-card h3 {
+ font-size: 1.25rem;
+ font-weight: 700;
+ color: #fff;
+ margin-bottom: 12px;
+ }
+ 
+ .mini-card p {
+ font-size: 0.95rem;
+ color: var(--text-muted);
+ margin-bottom: 0;
+ }
+ 
+ .ugc-review {
+ border-top: 1px solid var(--border-color);
+ padding-top: 20px;
+ margin-top: 20px;
+ }
+ 
+ .reviewer-meta {
+ display: flex;
+ justify-content: space-between;
+ font-size: 0.85rem;
+ color: var(--accent-neon);
+ margin-bottom: 8px;
+ font-weight: 600;
+ }
+ 
+ .reviewer-text {
+ font-size: 0.95rem;
+ color: var(--text-main);
+ font-style: italic;
+ }
+ 
+ .phone-bar {
+ background: linear-gradient(90deg, transparent, rgba(255,255,255,0.05), transparent);
+ padding: 16px;
+ border-radius: 8px;
+ margin: 20px 0;
+ font-size: 1.3rem;
+ font-weight: 800;
+ letter-spacing: 0.05em;
+ }
+ 
+ .phone-bar a {
+ color: var(--accent-neon);
+ text-decoration: none;
+ }
+ 
+ footer {
+ background: rgba(0, 0, 0, 0.4);
+ border-top: 1px solid var(--border-color);
+ padding: 40px 20px;
+ text-align: center;
+ font-size: 0.9rem;
+ color: var(--text-muted);
+ }
+ 
+ footer p {
+ margin-bottom: 8px;
+ }
+ 
+ footer a {
+ color: var(--text-muted);
+ text-decoration: none;
+ margin: 0 10px;
+ }
+ 
+ footer a:hover {
+ color: var(--accent-neon);
+ }
+ 
+ @media(max-width: 768px) {
+ .hero-glow h1 {
+ font-size: 2.2rem;
+ }
+ .nav-links {
+ display: none;
+ }
+ .glass-box {
+ padding: 24px;
+ }
+ }
+ 
+ </style>
+  <meta property="og:title" content="글 목록 (1/2) · t3b05-gd-kb-real-1">
+  <meta property="og:description" content="t3b05-gd-kb-real-1에 올라온 글 목록입니다.">
+  <meta property="og:url" content="https://gongdeok-song-tip.link-hub.org/posts.html">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary">
+</head>
+<body>
+  <div class="container">
+    <header class="glow-header">
+ <div class="nav-container">
+ <a href="index.html" class="logo-glow">공덕 노래방</a>
+ <nav class="nav-links">
+ <a href="index.html">홈</a>
+ <a href="about.html">상세정보</a>
+ 
+ </nav>
+ </div>
+ </header>
+    <main>
+      <h1>글 목록</h1>
+      <p>전체 40개 · 1/2 페이지</p>
+      <ul class="post-list">
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260705-476.html">공덕 노래방 음향 장비, 그 묵직한 진동의 이면</a>
+        <p class="post-item__summary">공덕 일대 노래방 시설 정보를 샅샅이 뒤지다 보면, 화려한 인테리어나 최신 곡목보다 음향 장비의 사양을 꼼꼼하게 따져야 하는 지점에 도달하게 됩니다. 대부분 노래방을 찾는 이들은 그저 마이크 소리가</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260719-0193.html">공덕 노래방 내돈내산 경험담으로 알아보는 풋쌤 동대문점 이용법</a>
+        <p class="post-item__summary">저녁 시간대 번화가를 걷다 보면 유흥 시설과 휴식 공간이 밀집해 있어 혼란을 겪기 쉽습니다. 특히 공덕 노래방 내돈내산 후기를 찾다가 동대문 인근까지 동선을 넓히는 분들이 계신데, 지리를 잘 모르는</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260719-0194.html">공덕 노래방 내돈내산 열풍 속 살펴보는 마포 합정 인디 소셜 라운지 가이드</a>
+        <p class="post-item__summary">많은 이들이 소규모 파티를 기획할 때 공덕 노래방 내돈내산 콘텐츠를 보며 장소를 물색하지만, 사실 프라이빗한 공간에 대한 오해는 적지 않습니다. 노래방처럼 시끄러운 환경이 파티의 정답이라고 생각하는</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260719-0195.html">공덕 노래방 내돈내산 검색하며 배우는 지수 성장 클리닉 정보</a>
+        <p class="post-item__summary">웹사이트의 가시성을 확보하기 위해서는 적절한 키워드 배치와 함께 안정적인 백링크 구조가 필수적입니다. 공덕 노래방 내돈내산 사례처럼 사람들이 직접 경험하고 남긴 데이터는 검색 엔진 최적화에서 매우 </p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260719-0196.html">공덕 노래방 내돈내산 경험처럼 자세히 보기 찾아보기</a>
+        <p class="post-item__summary">운영 중인 웹사이트의 방문자 수가 갑자기 줄어든 적이 있습니까? 공덕 노래방 내돈내산 정보가 갑자기 검색 결과에서 사라지는 것은 알고리즘에 의한 페널티일 가능성이 높습니다. 이런 상황을 해결하기 위</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260719-0197.html">공덕 노래방 내돈내산 경험으로 본 마포 셔츠룸 리얼 후기 소셜 마케팅 가이드</a>
+        <p class="post-item__summary">최근 공덕 노래방 내돈내산 후기들을 살펴보면, 소비자들이 느끼는 정보의 진위 여부를 판별하는 것이 점점 더 중요해지고 있습니다. 단순히 긍정적인 평판만을 나열하는 콘텐츠는 신뢰도가 낮을 수밖에 없습</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260719-0198.html">공덕 노래방 내돈내산 비교로 보는 마포 홍대 로컬 럭셔리 밤문화 가이드</a>
+        <p class="post-item__summary">공덕 노래방 내돈내산 사례를 연구하며 많은 분들이 가장 고민하는 부분은 가격과 서비스의 상관관계입니다. 동일한 예산 내에서도 어떤 선택지를 고르느냐에 따라 경험의 질이 크게 달라질 수 있기 때문입니</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260719-0199.html">공덕 노래방 내돈내산 시행착오 예방 마포 럭셔리 단체 가라오케 예약 가이드</a>
+        <p class="post-item__summary">공덕 노래방 내돈내산 기록을 살펴보면 단체 예약 시 의외로 많은 분들이 실패를 경험합니다. 특히 인원수와 예산 규모가 커질수록 세부적인 조율 과정에서 오해가 발생하는 경우가 잦습니다. 실패하는 지점</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260719-0200.html">공덕 노래방 내돈내산 리스트로 보는 마포 유흥 투명 정찰제 가격 정보 디렉토리</a>
+        <p class="post-item__summary">공덕 노래방 내돈내산 후기들을 정리하다 보면 가장 절실하게 느껴지는 것은 가격의 투명성입니다. 일부 매장의 모호한 요금 체계는 방문객들에게 큰 불안감을 안겨주곤 합니다. 오늘은 이러한 가격 불투명성</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260719-0201.html">공덕 노래방 내돈내산으로 찾는 구글 봇 정밀 검진 및 크롤 버짓 밀착 간호</a>
+        <p class="post-item__summary">퇴근길에 방문했던 공덕 노래방 내돈내산 후기를 정리하다 보면 웹사이트의 데이터 수집 방식에 대해 깊은 고민을 하게 됩니다. 마치 손님이 몰리는 피크 타임에 자리를 확보하는 것과 같이, 검색 엔진의 </p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260719-0202.html">공덕 노래방 내돈내산 활용한 4</a>
+        <p class="post-item__summary">많은 이들이 자동화 도구는 복잡한 코딩 지식 없이는 다룰 수 없다고 오해하곤 합니다. 하지만 공덕 노래방 내돈내산 기록과 같은 일상적인 데이터를 효율적으로 관리하는 과정에서 기초적인 자동화 원리를 </p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260719-0203.html">공덕 노래방 내돈내산 후기와 최적의 셔츠룸 예약 및 인원 구성 팁</a>
+        <p class="post-item__summary">모임의 분위기를 완벽하게 조성하기 위해서는 몇 가지 충족 조건을 미리 파악하는 것이 중요합니다. 단순히 장소를 정하는 것을 넘어, 공덕 노래방 내돈내산 후기들을 살피며 쾌적한 환경과 서비스 품질을 </p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260719-0204.html">공덕 노래방 내돈내산 데이터 활용 구글 틈새 키워드 트래픽 외환 거래 전략</a>
+        <p class="post-item__summary">여러분은 온라인에서 정보를 검색하다가 미처 생각지 못한 틈새시장을 발견한 적이 있습니까? 공덕 노래방 내돈내산 관련 키워드를 분석하며 트래픽의 흐름을 이해하는 것은 데이터 투자 전략의 중요한 시작점</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260719-0205.html">공덕 노래방 내돈내산 경험으로 파악하는 셔츠룸 사이트 정보 확인법</a>
+        <p class="post-item__summary">최근 유흥 문화를 즐기는 분들 사이에서 공덕 노래방 내돈내산 후기는 매우 중요한 정보원 역할을 합니다. 하지만 검증되지 않은 정보가 넘쳐나는 환경에서 셔츠룸 사이트 접속 시 주의가 필요합니다. 신뢰</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260719-0206.html">공덕 노래방 내돈내산 소비자가 알아야 할 구글 알고리즘 고신용 도메인 보증 카드 발급 특징</a>
+        <p class="post-item__summary">공덕 노래방 내돈내산 후기를 찾는 과정에서 우리는 다양한 디지털 플랫폼을 접하게 됩니다. 이때 각 사이트가 보유한 신뢰도는 검색 엔진의 알고리즘에 의해 결정되는데, 이를 관리하는 것이 바로 도메인 </p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260719-0207.html">공덕 노래방 내돈내산 실패 없는 마포 홍대 단체 가라오케 예약 가이드</a>
+        <p class="post-item__summary">공덕 노래방 내돈내산 경험이 많은 숙련자들도 단체 예약을 진행할 때는 종종 예상치 못한 변수에 직면하곤 합니다. 가장 흔한 실패 지점은 인원수에 맞지 않는 공간을 미리 확보하지 않거나 예약 확정 문</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260719-0208.html">공덕 노래방 내돈내산 단골들의 필수 리스트 합정 셔츠룸 단골들이 뽑은 핫플 매거진 확인법</a>
+        <p class="post-item__summary">공덕 노래방 내돈내산 경험을 통해 유흥 공간을 선택할 때는 접근성과 위치를 가장 먼저 고려해야 합니다. 특히 합정 일대는 대중교통 이용이 용이하고 인근 편의시설이 잘 갖춰져 있어 방문객의 만족도가 </p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260721-0315.html">공덕 노래방 내돈내산 방문 전 체크할 마포 단체 회식용 대형 룸 노래방 가격 정보 가이드</a>
+        <p class="post-item__summary">단체 회식을 준비할 때는 인원 수용 가능 여부, 접근성, 그리고 예산이라는 세 가지 조건을 완벽히 충족해야 합니다. 공덕 노래방 내돈내산 경험을 통해 깨달은 사실은, 막연한 정보만 믿고 이동했다가는</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260721-0316.html">공덕 노래방 내돈내산 이용자가 알아야 할 마포 셔츠룸 예약 시 눈탱이 피하는 법</a>
+        <p class="post-item__summary">혹시 공덕 노래방 내돈내산 방문 중에 생각했던 것보다 과도한 추가 금액이 청구되어 당황해본 경험이 있으신가요? 셔츠룸과 같은 특수 업태의 경우, 예약 단계에서 가격 구조를 정확히 인지하지 못하면 불</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260721-0317.html">공덕 노래방 내돈내산 경험으로 정리한 마포 코인노래방 방음 시설 비교 가이드</a>
+        <p class="post-item__summary">최근 이용자들이 직접 체험하고 남기는 공덕 노래방 내돈내산 후기는 공간 선택의 중요한 이정표가 됩니다. 특히 코인노래방을 고를 때 가장 신경 쓰이는 부분은 방음 수준입니다. 단순히 가격이 저렴한 곳</p>
+      </li>
+      </ul>
+    <nav class="pager">
+      <span class="pager__current">1</span>
+      <a class="pager__link" href="posts-2.html">2</a>
+    </nav>
+    </main>
+  </div>
+</body>
+</html>
