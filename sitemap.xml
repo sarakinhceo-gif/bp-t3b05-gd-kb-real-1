@@ -66,11 +66,6 @@
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://gongdeok-song-tip.link-hub.org/posts/review-001.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
     <loc>https://gongdeok-song-tip.link-hub.org/posts.html</loc>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
